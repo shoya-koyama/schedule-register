@@ -2,6 +2,7 @@ extends layout
 
 block content
   form.my-3(method="post", action="/schedules")
+    input(type="hidden" name="_csrf" value!=csrfToken)
     div.mb-3
       label.form-label(for="scheduleName") 予定名
       input#scheduleName.form-control(type="text" name="scheduleName")
@@ -11,4 +12,4 @@ block content
     div.mb-3
       label.form-label(for="candidates") 候補日程 (改行して複数入力してください)
       textarea#candidates.form-control(name="candidates" rows="4")
-    button.btn.btn-primary(type="submit") 予定をつくる
+    button.btn.btn-primary(type="submit") 予定をつくろう
